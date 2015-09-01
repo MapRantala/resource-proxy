@@ -119,7 +119,7 @@ public class proxy : IHttpHandler {
             
             if (serverUrl == null) {
                 //if no serverUrl found, send error message and get out.
-                string errorMsg = "The request URL does not match with the ServerUrl in proxy.config! Please check the proxy.config!";
+                string errorMsg = "The request URL (" + uri +") does not match with the ServerUrl in proxy.config! Please check the proxy.config!";
                 log(TraceLevel.Error, errorMsg);
                 sendErrorResponse(context.Response, null, errorMsg, System.Net.HttpStatusCode.BadRequest);
                 return;
